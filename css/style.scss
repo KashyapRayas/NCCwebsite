@@ -5,6 +5,7 @@ body {
     background-color: white;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
 }
 
   #container {
@@ -23,8 +24,12 @@ body {
     margin-top: 1em;
 
     .join {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #1A0D76;
         border-radius: 2em;
+        width: 3.5vw;
     }
 
   }
@@ -83,10 +88,11 @@ body {
   }
   
   nav a {
+    
     display: block;
-    padding: 0 20px;
+    padding: 0 2vw;
     color: white;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 60px;
     text-decoration: none;
   }
@@ -95,6 +101,10 @@ body {
     background-color: black;
     color: white;
   }
+
+  nav ul li ul li {
+    background-color: #518BBB;
+  } 
 
   nav ul li ul li:hover { background-color: #1A0D76; }
   
@@ -107,6 +117,10 @@ body {
   }
   
   nav ul li:hover > ul { display: inherit; }
+
+  nav ul li:hover > nav ul {
+    background-color: #1A0D76;
+  }
   
   nav ul ul li {
     width: 170px;
@@ -125,20 +139,81 @@ body {
   
   li > a:only-child:after { content: ''; }
 
-  .homepage {
+.homepage {
+position: absolute;
+top: 0;
+margin: 0;
+padding: 0;
+z-index: -1;
+width: 100%;
+height: 100vh;
+
+.hero {
     position: absolute;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    z-index: -1;
+    width: 65vw;
+    right: 0em;
+    top: -10vw;
+    z-index: 2;
+}
+
+.orange-background {
+    position: relative;
+    background-color: #FF5C00;
     width: 100%;
     height: 100vh;
+    width: 55%;
+    left: 45%;
+    .hero-background {
+        position: relative;
+        width: 250%;
+        mix-blend-mode: soft-light;
+    }
+}
 
+.hero-text {
+    position: absolute;
+    top: 25%;
+    left: 3%;
+    line-height: 1.5em;
+    z-index: 5;
+
+    h1 {
+        font-weight: 900;
+        font-size: 3.3vw;
+        color: #1A0D76;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 1.9vw;
+    }
+    .join-cta {
+        background-color: #1A0D76;
+        width: 8em;
+        height: 3em;
+        border-radius: 8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.7vw;
+        color: white;
+        text-decoration: none;
+    }
+    }
+}
+
+.aboutpage {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    height: 100vh;
+    top: 35vw;
     .ribbon {
         z-index: 4;
         position: absolute;
-        width: 100%;
-        top: 25em;
+        width: 100vw;
+        top: -10vw;
+        height: 100%;
         .red-vector {
             position: absolute;
             top: 10em;
@@ -166,66 +241,101 @@ body {
             clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
         }
     }
-
-    .hero {
-        position: absolute;
-        width: 65vw;
-        right: 0em;
-        top: -10em;
-        z-index: 2;
-    }
-
-    .orange-background {
+    .about-main-content {
+        z-index: 5;
+        background-color: #518BBB;
         position: relative;
-        background-color: #FF5C00;
-        width: 100%;
-        height: 100vh;
-        width: 55%;
-        left: 45%;
-        .hero-background {
+        top: 15em;
+        //border: 1px solid black;
+        height: 150vh;
+        .about-ncc {
             position: relative;
-            width: 250%;
-            mix-blend-mode: soft-light;
+            top: 0em;
+            h1 {
+                font-size: 3vw;
+                color: white;
+                font-weight: 800;
+                position: relative;
+                left: 20vw;
+            }
+            h3 {
+                position: relative;
+                color: #1A0D76;
+                font-size: 2.2vw;
+                width: 65%;
+                left: 21vw;
+            }
         }
-    }
-
-    .hero-text {
-        position: absolute;
-        top: 30%;
-        left: 5%;
-        line-height: 1.5em;
-
-        h1 {
-            font-weight: 900;
-            font-size: 3rem;
-            color: #1A0D76;
-        }
-        h3 {
-            font-weight: bold;
-            font-size: 2rem;
-        }
-        .join-cta {
-            background-color: #1A0D76;
-            width: 8em;
-            height: 3em;
-            border-radius: 8em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 1.5rem;
+        .about-bnmit-ncc {
+            position: relative;
+            top: 3em;
+            img {
+                width: 100%;
+            }
+            h1 {
+                font-size: 3vw;
+                color: white;
+                font-weight: 800;
+                position: relative;
+                left: 15vw;
+            }
+            h3 {
+                position: relative;
+                color: #1A0D76;
+                font-size: 2.2vw;
+                width: 65%;
+                left: 16vw;
+            }
         }
         
+        $animationSpeed: 20s;
+        // Animation
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 7))}
     }
 
+
+    // Styling
+    .slider {
+        height: 112px;
+        margin: auto;
+        overflow:hidden;
+        position: relative;
+        width: 100%;
+        z-index: 6;
+	
+        &::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        &::before {
+            left: 0;
+            top: 0;
+        }
+	
+        .slide-track {
+            animation: scroll $animationSpeed linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+	
+        .slide {
+            padding: 2em;
+            height: 112px;
+            width: 200px;
+        }
+    }
+    }
 }
   
   
   /* Media Queries
   --------------------------------------------- */
   
-@media all and (max-width : 768px) {
+@media all and (max-width : 915px) {
   
     #logo {
     display: flex;
@@ -236,6 +346,10 @@ body {
     justify-content: left;
     transform: scale(0.8) translateX(-3em);
 
+    }
+
+    nav a {
+        font-size: 20px;
     }
 
     .about {
@@ -319,44 +433,32 @@ body {
         width: 100%;
 
         .hero {
-            top: -7em;
+            top: -22vw;
             width: 100%;
         }
         .orange-background {
             width: 100%;
             left: 0;
         }
-        .ribbon {
-            top: 5em;
-            .navyblue-vector {
-                top: 11em;
-            }
-            .skyblue-vector {
-                top: 12em;
-            }
-        }
         .hero-text {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: auto auto;
-            gap: 1em;
             top: -10em;
-            row-gap: 0;
-            line-height: auto;
             h1 {
-                grid-column-start: 1;
-                grid-column-end: 3;
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
             h3 {
-                margin: auto;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             .join-cta {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
         }
 
+    }
+    .aboutpage {
+        top: 85vw;
+        .ribbon {
+            height: 20vw;
+        }
     }
 
 }
