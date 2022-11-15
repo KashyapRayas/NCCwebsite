@@ -1,4 +1,5 @@
 
+
 body {
     margin: 0;
     padding: 0;
@@ -206,7 +207,7 @@ height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 2;
-    height: 100vh;
+    height: 200vh;
     top: 35vw;
     .ribbon {
         z-index: 4;
@@ -241,13 +242,14 @@ height: 100vh;
             clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
         }
     }
+
     .about-main-content {
         z-index: 5;
         background-color: #518BBB;
         position: relative;
         top: 15em;
         //border: 1px solid black;
-        height: 150vh;
+        height: 85vw;
         .about-ncc {
             position: relative;
             top: 0em;
@@ -287,47 +289,63 @@ height: 100vh;
                 left: 16vw;
             }
         }
-        
-        $animationSpeed: 20s;
-        // Animation
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-250px * 7))}
+        section {
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+            top: 5%;
+            padding: 0;
+    
+            article {
+                display: flex;
+                width: 200%;
+                animation: bannermove 20s linear infinite;
+                gap: 3em;
+            }
+    
+            div {
+                width: 100%;
+              }
+              
+              ul {
+                display: flex;
+                background: none;
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+                gap: 3em;
+              }
+              
+              li {
+                width: 100%;
+                background: blue;
+              }
+              
+              li:nth-child(2) {
+                background: green;
+              }
+              
+              li:nth-child(3) {
+                background: yellow;
+              }
+    
+              img {
+                border: 0.7em solid #1A0D76;
+                display: block;
+                width: 100%;
+              }
+        }
     }
 
+    
 
-    // Styling
-    .slider {
-        height: 112px;
-        margin: auto;
-        overflow:hidden;
-        position: relative;
-        width: 100%;
-        z-index: 6;
-	
-        &::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
+    @keyframes bannermove {
+        0% {
+          transform: translateX(0);
         }
-
-        &::before {
-            left: 0;
-            top: 0;
+        100% {
+          transform: translateX(-50%);
         }
-	
-        .slide-track {
-            animation: scroll $animationSpeed linear infinite;
-            display: flex;
-            width: calc(250px * 14);
-        }
-	
-        .slide {
-            padding: 2em;
-            height: 112px;
-            width: 200px;
-        }
-    }
     }
 }
   
