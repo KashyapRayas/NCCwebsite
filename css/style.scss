@@ -53,7 +53,7 @@ nav {
         width: 4em;
     }
     .text {
-        //border: 1px solid black;
+        
         height: 5em;
         transform: translateX(1em);
         .wordmark {
@@ -184,12 +184,12 @@ li > a:only-child:after { content: ''; }
 
         h1 {
             font-weight: 900;
-            font-size: 3.3vw;
+            font-size: 2.5vw;
             color: #1A0D76;
         }
         h3 {
             font-weight: bold;
-            font-size: 1.9vw;
+            font-size: 1.8vw;
         }
         .join-cta {
             background-color: #1A0D76;
@@ -200,7 +200,7 @@ li > a:only-child:after { content: ''; }
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.7vw;
+            font-size: 1.3vw;
             color: white;
             text-decoration: none;
         }
@@ -214,6 +214,7 @@ li > a:only-child:after { content: ''; }
     height: auto;
     top: 26em;
     overflow: hidden;
+
     .ribbon {
         overflow: hidden;
         z-index: 4;
@@ -254,13 +255,12 @@ li > a:only-child:after { content: ''; }
         background-color: #518BBB;
         position: relative;
         top: 15em;
-        //border: 1px solid black;
-        height: 85vw;
+        height: auto;
         .about-ncc {
             position: relative;
             top: 0em;
             h1 {
-                font-size: 3vw;
+                font-size: 2.5vw;
                 color: white;
                 font-weight: 800;
                 position: relative;
@@ -269,7 +269,7 @@ li > a:only-child:after { content: ''; }
             h3 {
                 position: relative;
                 color: #1A0D76;
-                font-size: 2.2vw;
+                font-size: 1.8vw;
                 width: 65%;
                 left: 21vw;
             }
@@ -278,10 +278,10 @@ li > a:only-child:after { content: ''; }
             position: relative;
             top: 3em;
             img {
-                width: 100%;
+                left: 8em;
             }
             h1 {
-                font-size: 3vw;
+                font-size: 2.5vw;
                 color: white;
                 font-weight: 800;
                 position: relative;
@@ -290,7 +290,7 @@ li > a:only-child:after { content: ''; }
             h3 {
                 position: relative;
                 color: #1A0D76;
-                font-size: 2.2vw;
+                font-size: 1.8vw;
                 width: 65%;
                 left: 16vw;
             }
@@ -355,21 +355,18 @@ li > a:only-child:after { content: ''; }
     .about-main-content-2 {
 
         position: relative;
-        top: 20em;
-        left: 5em;
+        padding-top: 20em;
+        left: 14%;
         width: 100%;
-        height: 120em;
         display: grid;
-        grid-template-columns: 30vw 30vw;
-        grid-template-rows: 20vw 30vw 50em;
+        grid-template-columns: 30% 30%;
+        grid-template-rows: auto auto auto;
         column-gap: 10em;
-
-
         .content-container {
             position: relative;
             top: 0em;
             h1 {
-                font-size: 3vw;
+                font-size: 2.5vw;
                 color: #1A0D76;
                 font-weight: 800;
                 position: relative;
@@ -377,7 +374,7 @@ li > a:only-child:after { content: ''; }
             h3 {
                 position: relative;
                 color: #1A0D76;
-                font-size: 2.2vw;
+                font-size: 1.7vw;
             }
         }
 
@@ -398,19 +395,21 @@ li > a:only-child:after { content: ''; }
 
 .activitiespage {
     position: relative;
-    z-index: 7;
-    top: 220em;
+    top: 175em;
     margin: 0;
     left: 5em;
+    height: auto;
 
     .heading {
         display: flex;
         overflow: hidden;
         justify-content: space-between;
         gap: 3em;
+        flex-grow: 0;
+        flex-shrink: 0;
         h1 {
             padding: 0;
-            font-size: 3vw;
+            font-size: 2.5vw;
             font-weight: 800;
             color: black;
             white-space: nowrap;
@@ -427,23 +426,23 @@ li > a:only-child:after { content: ''; }
 
     .card-slider {
 
-        display: flex;
         overflow: hidden;
         gap: 3em;
+        width: 100%;
 
         .card {
+            display: inline-block;
             width: 30em;
             height: 20em;
             background-color: #E4E4E4;
             border-radius: 2em;
-    
             a {
                 text-decoration: none;
-                font-size: 2.3rem;
+                font-size: 1.8rem;
                 font-weight: bold;
                 position: relative;
-                left: 7.4em;
-                top: 7.1em;
+                left: 11em;
+                top: 9.5em;
                 color: black;
             }
         }
@@ -582,7 +581,7 @@ margin: 0;
         }
         .about-main-content {
             top: 8em;
-            height: 75%;
+            height: auto;
             .about-ncc {
                 h1 {
                     font-size: 2.2em;
@@ -620,9 +619,9 @@ margin: 0;
             }
         }
         .about-main-content-2 {
-            top: 12em;
-            height: 100%;
-            left: 8%;
+            padding-top: 12em;
+            height: auto;
+            left: 6%;
             grid-template-columns: 90%;
             grid-template-rows: auto auto auto auto;
             gap: 0;
